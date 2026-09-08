@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read the latest insights on land surveying, property valuation, real estate, and construction from the GeoSurvey Pro blog.">
+  <title>Blog - GeoSurvey Pro</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="main-navbar navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><i class="bi bi-compass brand-icon"></i> GeoSurvey Pro</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation"><i class="bi bi-list"></i></button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Home</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="index.html">Home 1</a></li><li><a class="dropdown-item" href="index-2.html">Home 2</a></li></ul></li><li class="nav-item"><a class="nav-link" href="about.html">About</a></li><li class="nav-item"><a class="nav-link" href="services.html">Services</a></li><li class="nav-item"><a class="nav-link" href="process.html">Process</a></li><li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li><li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="d-flex align-items-center gap-2 nav-actions">
+                <button class="theme-toggle-btn" type="button" onclick="toggleTheme()" title="Toggle Theme"><i class="bi bi-moon"></i></button>
+                <button class="rtl-toggle-btn" type="button" onclick="toggleRTL()" title="Toggle RTL"><i class="bi bi-text-right"></i></button>
+                <a href="contact.html#site-visit" class="btn nav-cta-btn">Request Site Visit</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<!-- PAGE HERO -->
+<section class="page-hero" style="background-image:url('images/hero/blog-hero.jpg')">
+  <div class="container">
+    <h1>Our Blog</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Blog</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<section class="section-padding fade-in">
+  <div class="container">
+    <div class="row g-5">
+      <!-- BLOG LIST -->
+      <div class="col-lg-8">
+        <form class="blog-search mb-4" onsubmit="handleBlogSearch(event)">
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control" id="blogSearchInput" placeholder="Search blog posts...">
+            <button class="btn btn-primary-custom" type="submit">Search</button>
+          </div>
+        </form>
+
+        <!-- ACTIVE CATEGORY FILTER BADGE -->
+        <div id="activeCategoryBanner" class="alert alert-success py-2 px-3 mb-4 d-flex align-items-center justify-content-between" style="display:none !important;border-radius:10px;">
+          <div>
+            <i class="bi bi-funnel-fill me-2" style="color:var(--primary);"></i>Showing category: <strong id="currentCategoryLabel">All Posts</strong>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-success" onclick="resetBlogFilters()">
+            <i class="bi bi-x-circle me-1"></i>Clear Filter
+          </button>
+        </div>
+
+        <div class="row g-4" id="blogGrid">
+          <div class="col-md-6" data-category="Boundary Surveys">
+            <div class="blog-card" data-category="Boundary Surveys">
+              <a href="blog-details-1.html"><img src="https://images.unsplash.com/photo-1771783572336-4e99b9aab271?w=600&h=400&fit=crop" alt="Boundary survey being performed" class="card-img-top"></a>
+              <div class="card-body">
+                <div class="blog-meta"><span><i class="bi bi-calendar"></i> Jan 12, 2026</span><span><i class="bi bi-tag"></i> Boundary Surveys</span></div>
+                <h5 class="card-title"><a href="blog-details-1.html">Why Every Property Owner Needs a Boundary Survey</a></h5>
+                <p class="card-text">Discover the legal and financial protection that a professional boundary survey provides.</p>
+                <a href="blog-details-1.html" class="btn btn-outline-custom btn-sm">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" data-category="Property Valuation">
+            <div class="blog-card" data-category="Property Valuation">
+              <a href="blog-details-2.html"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop" alt="Property valuation analysis concepts" class="card-img-top"></a>
+              <div class="card-body">
+                <div class="blog-meta"><span><i class="bi bi-calendar"></i> Feb 03, 2026</span><span><i class="bi bi-tag"></i> Property Valuation</span></div>
+                <h5 class="card-title"><a href="blog-details-2.html">5 Factors That Influence Property Valuation</a></h5>
+                <p class="card-text">Understand what really drives the value of your property in today's market.</p>
+                <a href="blog-details-2.html" class="btn btn-outline-custom btn-sm">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" data-category="Construction">
+            <div class="blog-card" data-category="Construction">
+              <a href="blog-details-3.html"><img src="https://images.unsplash.com/photo-1759318965270-0549e993a3b8?w=600&h=400&fit=crop" alt="Modern construction site survey" class="card-img-top"></a>
+              <div class="card-body">
+                <div class="blog-meta"><span><i class="bi bi-calendar"></i> Mar 18, 2026</span><span><i class="bi bi-tag"></i> Construction</span></div>
+                <h5 class="card-title"><a href="blog-details-3.html">How Drone Technology is Revolutionizing Construction Surveys</a></h5>
+                <p class="card-text">Explore how UAV mapping and photogrammetry are transforming the industry.</p>
+                <a href="blog-details-3.html" class="btn btn-outline-custom btn-sm">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" data-category="Land Development">
+            <div class="blog-card" data-category="Land Development">
+              <a href="blog-details-4.html"><img src="https://images.unsplash.com/photo-1749192901190-ea45a711b0e3?w=600&h=400&fit=crop" alt="Land development planning documents" class="card-img-top"></a>
+              <div class="card-body">
+                <div class="blog-meta"><span><i class="bi bi-calendar"></i> Apr 09, 2026</span><span><i class="bi bi-tag"></i> Land Development</span></div>
+                <h5 class="card-title"><a href="blog-details-4.html">The Role of Topographic Surveys in Land Development</a></h5>
+                <p class="card-text">How accurate topographic data forms the foundation of successful development projects.</p>
+                <a href="blog-details-4.html" class="btn btn-outline-custom btn-sm">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="blogNoResults" class="text-center py-5 my-3" style="display:none;">
+          <div class="mb-3 text-muted" style="font-size:2.5rem;"><i class="bi bi-journal-x"></i></div>
+          <h5 class="mb-2">No Matching Posts Found</h5>
+          <p class="text-muted mb-3">Try adjusting your search query or select another category.</p>
+          <button type="button" class="btn btn-outline-custom btn-sm" onclick="resetBlogFilters()"><i class="bi bi-arrow-counterclockwise me-1"></i>View All Posts</button>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="col-lg-4">
+        <div class="sidebar-widget">
+          <h5>Categories</h5>
+          <ul class="list-unstyled blog-category-list">
+            <li class="py-1">
+              <a href="javascript:void(0)" class="blog-category-link active" data-category="all" onclick="filterBlogCategory('all', this)">
+                <span><i class="bi bi-grid me-2"></i>All Posts</span>
+                <span class="badge rounded-pill">4</span>
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="javascript:void(0)" class="blog-category-link" data-category="Boundary Surveys" onclick="filterBlogCategory('Boundary Surveys', this)">
+                <span><i class="bi bi-chevron-right me-2"></i>Boundary Surveys</span>
+                <span class="badge rounded-pill">1</span>
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="javascript:void(0)" class="blog-category-link" data-category="Property Valuation" onclick="filterBlogCategory('Property Valuation', this)">
+                <span><i class="bi bi-chevron-right me-2"></i>Property Valuation</span>
+                <span class="badge rounded-pill">1</span>
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="javascript:void(0)" class="blog-category-link" data-category="Construction" onclick="filterBlogCategory('Construction', this)">
+                <span><i class="bi bi-chevron-right me-2"></i>Construction</span>
+                <span class="badge rounded-pill">1</span>
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="javascript:void(0)" class="blog-category-link" data-category="Land Development" onclick="filterBlogCategory('Land Development', this)">
+                <span><i class="bi bi-chevron-right me-2"></i>Land Development</span>
+                <span class="badge rounded-pill">1</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-widget">
+          <h5>Recent Posts</h5>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a href="blog-details-1.html">Why Every Property Owner Needs a Boundary Survey</a></li>
+            <li class="mb-3"><a href="blog-details-2.html">5 Factors That Influence Property Valuation</a></li>
+            <li class="mb-3"><a href="blog-details-3.html">How Drone Technology is Revolutionizing Construction Surveys</a></li>
+            <li class="mb-3"><a href="blog-details-4.html">The Role of Topographic Surveys in Land Development</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-widget">
+          <h5>Need a Survey?</h5>
+          <p class="text-muted">Get accurate results from certified professionals.</p>
+          <a href="contact.html" class="btn btn-primary-custom w-100">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <h5><i class="bi bi-compass"></i> GeoSurvey Pro</h5>
+        <p>Professional land surveying and property valuation services backed by precision, certified expertise, and reliable reporting.</p>
+        <div class="footer-social">
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <h5>Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-4 mb-4">
+        <h5>Services</h5>
+        <ul class="footer-links">
+          <li><a href="service-boundary-surveys.html">Boundary Surveys</a></li>
+          <li><a href="service-topographic-mapping.html">Topographic Mapping</a></li>
+          <li><a href="service-property-valuation.html">Property Valuation</a></li>
+          <li><a href="service-construction-surveys.html">Construction Surveys</a></li>
+          <li><a href="service-site-surveys.html">Site Surveys</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-4 mb-4">
+        <h5>Contact Info</h5>
+        <ul class="footer-links">
+          <li><i class="bi bi-geo-alt me-2"></i> 123 Surveyor Lane, Precision City, PC 10001</li>
+          <li><i class="bi bi-telephone me-2"></i> +1 (555) 234-5678</li>
+          <li><i class="bi bi-envelope me-2"></i> info@geosurveypro.com</li>
+          <li><i class="bi bi-clock me-2"></i> Mon - Fri: 8:00 AM - 6:00 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span class="current-year"></span> GeoSurvey Pro. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" style="display:none;position:fixed;bottom:30px;right:30px;z-index:999;width:45px;height:45px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:1.2rem;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,0.2);align-items:center;justify-content:center;" title="Back to Top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+

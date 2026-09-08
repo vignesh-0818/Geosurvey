@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="GeoSurvey Pro provides professional land surveying and property valuation services including boundary surveys, topographic mapping, construction surveys, and market valuation reports.">
+  <title>Land Surveying &amp; Property Valuation - GeoSurvey Pro</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="main-navbar navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="bi bi-compass brand-icon"></i> GeoSurvey Pro</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation"><i
+          class="bi bi-list"></i></button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" role="button"
+              data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Home</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item active" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item" href="index-2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="process.html">Process</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2 nav-actions">
+          <button class="theme-toggle-btn" type="button" onclick="toggleTheme()" title="Toggle Theme"><i
+              class="bi bi-moon"></i></button>
+          <button class="rtl-toggle-btn" type="button" onclick="toggleRTL()" title="Toggle RTL"><i
+              class="bi bi-text-right"></i></button>
+          <a href="contact.html#site-visit" class="btn nav-cta-btn">Request Site Visit</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero-section"
+    style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&h=1080&fit=crop');">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="hero-badge"><i class="bi bi-award me-1"></i> Certified Surveying &amp; Valuation Experts</div>
+          <h1>Accurate Land Surveys.<br>Reliable Property Valuations.</h1>
+          <p>Professional surveying and property valuation services backed by precision, certified expertise, and
+            reliable reporting.</p>
+          <div class="d-flex gap-3 flex-wrap mb-4">
+            <a href="contact.html" class="btn btn-primary-custom btn-lg"><i class="bi bi-compass me-2"></i>Request a
+              Site Visit</a>
+            <a href="services.html" class="btn btn-white btn-lg"><i class="bi bi-grid me-2"></i>Explore Services</a>
+          </div>
+          <div class="row g-3" style="max-width:600px;">
+            <div class="col-3 text-center">
+              <h3 class="counter text-white" data-target="500" data-suffix="+">0</h3>
+              <p style="font-size:0.85rem;opacity:0.9;">Projects</p>
+            </div>
+            <div class="col-3 text-center">
+              <h3 class="counter text-white" data-target="15" data-suffix="+">0</h3>
+              <p style="font-size:0.85rem;opacity:0.9;">Years</p>
+            </div>
+            <div class="col-3 text-center">
+              <h3 class="counter text-white" data-target="99.8" data-decimal="1">0</h3>
+              <p style="font-size:0.85rem;opacity:0.9;">% Accuracy</p>
+            </div>
+            <div class="col-3 text-center">
+              <h3 class="counter text-white" data-target="24">0</h3>
+              <p style="font-size:0.85rem;opacity:0.9;">/7 Support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ACCURACY & CERTIFIED EXPERTISE ================= -->
+  <section class="section-padding fade-in">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Survey Accuracy &amp; Certified Expertise</h2>
+        <p class="section-subtitle">Delivering precise measurements and reliable valuations with certified
+          professionals.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="icon"><i class="bi bi-award"></i></div>
+            <h5>Certified Surveyors</h5>
+            <p>Licensed professionals with verified credentials and extensive field experience.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="icon"><i class="bi bi-compass"></i></div>
+            <h5>Precision Instruments</h5>
+            <p>State-of-the-art surveying technology including total stations and GPS systems.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="icon"><i class="bi bi-file-check"></i></div>
+            <h5>Accurate Reports</h5>
+            <p>Detailed and legally compliant documentation for every project we complete.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="icon"><i class="bi bi-shield-check"></i></div>
+            <h5>Quality Assured</h5>
+            <p>Multi-stage quality verification ensures accuracy in every measurement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SURVEYING SERVICES ================= -->
+  <section class="section-padding section-bg fade-in">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Our Surveying Services</h2>
+        <p class="section-subtitle">Comprehensive land surveying solutions tailored to your project needs.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1706380003139-7471c33ca2b2?w=600&h=400&fit=crop"
+              class="card-img-top" alt="Boundary survey being conducted">
+            <div class="card-body">
+              <div class="mb-2"><i class="bi bi-diagram-3" style="font-size:1.8rem;color:var(--primary);"></i></div>
+              <h5 class="card-title">Boundary Surveys</h5>
+              <p class="card-text">Determine exact property boundaries with precision using advanced GPS technology.</p>
+              <a href="service-boundary-surveys.html" class="btn btn-outline-custom btn-sm">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1768501362994-ecf15566cf53?w=600&h=400&fit=crop"
+              class="card-img-top" alt="Topographic survey equipment">
+            <div class="card-body">
+              <div class="mb-2"><i class="bi bi-map" style="font-size:1.8rem;color:var(--primary);"></i></div>
+              <h5 class="card-title">Topographic Mapping</h5>
+              <p class="card-text">Detailed terrain mapping with elevation data and contour information.</p>
+              <a href="service-topographic-mapping.html" class="btn btn-outline-custom btn-sm">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop"
+              class="card-img-top" alt="Construction surveyors working on a building site">
+            <div class="card-body">
+              <div class="mb-2"><i class="bi bi-building" style="font-size:1.8rem;color:var(--primary);"></i></div>
+              <h5 class="card-title">Construction Surveys</h5>
+              <p class="card-text">Reference points and markers ensuring accurate building placement.</p>
+              <a href="service-construction-surveys.html" class="btn btn-outline-custom btn-sm">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1756216996846-0089f4e1709e?w=600&h=400&fit=crop"
+              class="card-img-top" alt="Site survey with total station">
+            <div class="card-body">
+              <div class="mb-2"><i class="bi bi-geo-alt" style="font-size:1.8rem;color:var(--primary);"></i></div>
+              <h5 class="card-title">Site Surveys</h5>
+              <p class="card-text">Comprehensive site analysis for development planning and assessment.</p>
+              <a href="service-site-surveys.html" class="btn btn-outline-custom btn-sm">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DATA-DRIVEN SURVEY SOLUTIONS ================= -->
+  <section class="section-padding fade-in">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <img src="images/data-survey-solutions.jpg"
+            alt="Technical survey data planning and digital documentation workflow" class="img-fluid rounded"
+            style="border-radius:16px;">
+        </div>
+        <div class="col-lg-6">
+          <h2 class="mb-3">Data-Driven Survey Solutions</h2>
+          <p class="text-muted mb-4">Transforming complex spatial measurements into actionable digital deliverables. We
+            integrate rigorous field data with advanced computer-aided design and geographic information systems to
+            support land development, municipal approval, and construction execution.</p>
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <div class="rounded-circle p-2 d-flex align-items-center justify-content-center"
+                  style="background:rgba(var(--primary-rgb),0.1);color:var(--primary);width:42px;height:42px;flex-shrink:0;">
+                  <i class="bi bi-diagram-3-fill fs-5"></i>
+                </div>
+                <div>
+                  <h6 class="mb-1 fw-bold">CAD &amp; GIS Integration</h6>
+                  <p class="text-muted mb-0 small">Seamless AutoCAD (.DWG), MicroStation, and ArcGIS compatible
+                    datasets.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <div class="rounded-circle p-2 d-flex align-items-center justify-content-center"
+                  style="background:rgba(var(--primary-rgb),0.1);color:var(--primary);width:42px;height:42px;flex-shrink:0;">
+                  <i class="bi bi-file-earmark-check-fill fs-5"></i>
+                </div>
+                <div>
+                  <h6 class="mb-1 fw-bold">Certified Documentation</h6>
+                  <p class="text-muted mb-0 small">Legally recognized plats, boundary descriptions, and deed
+                    verification.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <div class="rounded-circle p-2 d-flex align-items-center justify-content-center"
+                  style="background:rgba(var(--primary-rgb),0.1);color:var(--primary);width:42px;height:42px;flex-shrink:0;">
+                  <i class="bi bi-shield-lock-fill fs-5"></i>
+                </div>
+                <div>
+                  <h6 class="mb-1 fw-bold">Quality Validation</h6>
+                  <p class="text-muted mb-0 small">Multi-tier geodetic audits and closed-traverse error verification.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <div class="rounded-circle p-2 d-flex align-items-center justify-content-center"
+                  style="background:rgba(var(--primary-rgb),0.1);color:var(--primary);width:42px;height:42px;flex-shrink:0;">
+                  <i class="bi bi-cloud-arrow-down-fill fs-5"></i>
+                </div>
+                <div>
+                  <h6 class="mb-1 fw-bold">Digital Reporting Delivery</h6>
+                  <p class="text-muted mb-0 small">Rapid online portal delivery of signed reports and 3D spatial models.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="contact.html" class="btn btn-primary-custom"><i class="bi bi-envelope me-2"></i>Request a
+              Proposal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY CHOOSE US ================= -->
+  <section class="section-padding section-bg fade-in">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Why Choose GeoSurvey Pro</h2>
+        <p class="section-subtitle">We combine technical expertise with exceptional client service.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="choose-card">
+            <div class="icon"><i class="bi bi-clock-history"></i></div>
+            <div>
+              <h6>Fast Turnaround</h6>
+              <p class="mb-0 text-muted" style="font-size:0.9rem;">Quick and efficient survey completion.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="choose-card">
+            <div class="icon"><i class="bi bi-currency-dollar"></i></div>
+            <div>
+              <h6>Competitive Pricing</h6>
+              <p class="mb-0 text-muted" style="font-size:0.9rem;">Transparent and fair pricing.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="choose-card">
+            <div class="icon"><i class="bi bi-people"></i></div>
+            <div>
+              <h6>Experienced Team</h6>
+              <p class="mb-0 text-muted" style="font-size:0.9rem;">Over 15 years of expertise.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="choose-card">
+            <div class="icon"><i class="bi bi-phone"></i></div>
+            <div>
+              <h6>24/7 Availability</h6>
+              <p class="mb-0 text-muted" style="font-size:0.9rem;">Round-the-clock support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TECHNOLOGY ================= -->
+  <section class="section-padding fade-in">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Modern Surveying Technology</h2>
+        <p class="section-subtitle">We leverage cutting-edge technology to deliver exceptional accuracy.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="icon"><i class="bi bi-broadcast-pin"></i></div>
+            <h5>GPS/GNSS</h5>
+            <p>High-precision satellite positioning for millimetre accuracy.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="icon"><i class="bi bi-camera"></i></div>
+            <h5>Drone Surveys</h5>
+            <p>Aerial mapping and photogrammetry for large-scale projects.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="icon"><i class="bi bi-printer"></i></div>
+            <h5>3D Scanning</h5>
+            <p>Detailed terrain modeling with laser scanning technology.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="icon"><i class="bi bi-cpu"></i></div>
+            <h5>Digital Processing</h5>
+            <p>Advanced data analysis and GIS mapping software.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR PROCESS ================= -->
+  <section class="section-padding section-bg fade-in">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Our Process</h2>
+        <p class="section-subtitle">A systematic approach that ensures accuracy and client satisfaction.</p>
+      </div>
+      <div class="row g-4 text-center">
+        <div class="col-lg-3 col-md-6">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <i class="bi bi-chat-dots mb-3" style="font-size:2rem;color:var(--primary);"></i>
+            <h6 class="mb-2">Consultation</h6>
+            <p class="text-muted mb-0">Discuss your requirements and objectives.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <i class="bi bi-geo-alt mb-3" style="font-size:2rem;color:var(--primary);"></i>
+            <h6 class="mb-2">Site Visit</h6>
+            <p class="text-muted mb-0">Assess the property and site conditions.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <i class="bi bi-radar mb-3" style="font-size:2rem;color:var(--primary);"></i>
+            <h6 class="mb-2">Field Survey</h6>
+            <p class="text-muted mb-0">Collect precise measurement data on-site.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <i class="bi bi-file-earmark-check mb-3" style="font-size:2rem;color:var(--primary);"></i>
+            <h6 class="mb-2">Report Delivery</h6>
+            <p class="text-muted mb-0">Comprehensive documentation and certification.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="process.html" class="btn btn-outline-custom">View Full Process</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COVERAGE AREAS ================= -->
+  <section class="section-padding fade-in">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Coverage Areas</h2>
+        <p class="section-subtitle">We serve clients across multiple regions and property types.</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-3 col-md-6">
+          <div class="coverage-card">
+            <div class="icon"><i class="bi bi-geo-alt"></i></div>
+            <h6>Regional Coverage</h6>
+            <p class="text-muted mb-0" style="font-size:0.9rem;">Multiple districts and metro areas</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="coverage-card">
+            <div class="icon"><i class="bi bi-house"></i></div>
+            <h6>All Property Types</h6>
+            <p class="text-muted mb-0" style="font-size:0.9rem;">Residential, commercial, industrial</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="coverage-card">
+            <div class="icon"><i class="bi bi-map"></i></div>
+            <h6>Full Service</h6>
+            <p class="text-muted mb-0" style="font-size:0.9rem;">Surveying, valuation, certification</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="coverage-area.html" class="btn btn-primary-custom"><i class="bi bi-map me-2"></i>View Coverage
+          Details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="section-padding section-bg fade-in">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle">Trusted by property owners, developers, and legal professionals.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="testimonial-card">
+            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p class="testimonial-text">"GeoSurvey Pro provided an exceptionally accurate boundary survey that resolved
+              a property dispute. Their professionalism and attention to detail were outstanding."</p>
+            <div class="d-flex align-items-center gap-3">
+              <img src="images/testimonials/robert-johnson.jpg" class="testimonial-avatar" alt="Robert Johnson">
+              <div>
+                <div class="testimonial-author">Robert Johnson</div><small class="text-muted">Property Owner</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testimonial-card">
+            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p class="testimonial-text">"Their topographic mapping was crucial for our subdivision development. The team
+              was professional, timely, and the reports were comprehensive and well-documented."</p>
+            <div class="d-flex align-items-center gap-3">
+              <img src="images/testimonials/david-chen.jpg" class="testimonial-avatar" alt="David Chen">
+              <div>
+                <div class="testimonial-author">David Chen</div><small class="text-muted">Developer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testimonial-card">
+            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p class="testimonial-text">"The property valuation report prepared by GeoSurvey Pro was detailed, backed by
+              solid market data, and helped us secure financing for our new commercial project."</p>
+            <div class="d-flex align-items-center gap-3">
+              <img src="images/testimonials/linda-martinez.jpg" class="testimonial-avatar" alt="Linda Martinez">
+              <div>
+                <div class="testimonial-author">Linda Martinez</div><small class="text-muted">Commercial Property
+                  Owner</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ================= CTA ================= -->
+  <section class="section-padding" style="background:linear-gradient(135deg,#1a6b3c 0%,#0a3d20 100%);color:#fff;">
+    <div class="container text-center">
+      <h2 style="color:#fff;">Ready to Start Your Survey Project?</h2>
+      <p class="mb-4" style="color:rgba(255,255,255,0.85);max-width:600px;margin-left:auto;margin-right:auto;">Contact
+        us today for a free consultation and site visit. Our experts are ready to assist with all your surveying and
+        valuation needs.</p>
+      <a href="contact.html" class="btn btn-white btn-lg"><i class="bi bi-compass me-2"></i>Get Started</a>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h5><i class="bi bi-compass"></i> GeoSurvey Pro</h5>
+          <p>Professional land surveying and property valuation services backed by precision, certified expertise, and
+            reliable reporting.</p>
+          <div class="footer-social">
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i
+                class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i
+                class="bi bi-twitter-x"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+                class="bi bi-linkedin"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i
+                class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h5>Services</h5>
+          <ul class="footer-links">
+            <li><a href="service-boundary-surveys.html">Boundary Surveys</a></li>
+            <li><a href="service-topographic-mapping.html">Topographic Mapping</a></li>
+            <li><a href="service-property-valuation.html">Property Valuation</a></li>
+            <li><a href="service-construction-surveys.html">Construction Surveys</a></li>
+            <li><a href="service-site-surveys.html">Site Surveys</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h5>Contact Info</h5>
+          <ul class="footer-links">
+            <li><i class="bi bi-geo-alt me-2"></i> 123 Surveyor Lane, Precision City, PC 10001</li>
+            <li><i class="bi bi-telephone me-2"></i> +1 (555) 234-5678</li>
+            <li><i class="bi bi-envelope me-2"></i> info@geosurveypro.com</li>
+            <li><i class="bi bi-clock me-2"></i> Mon - Fri: 8:00 AM - 6:00 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span class="current-year"></span> GeoSurvey Pro. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top"
+    style="display:none;position:fixed;bottom:30px;right:30px;z-index:999;width:45px;height:45px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:1.2rem;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,0.2);align-items:center;justify-content:center;"
+    title="Back to Top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
