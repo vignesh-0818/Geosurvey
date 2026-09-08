@@ -177,7 +177,7 @@ section[id] {
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 1030;
+  z-index: 1050;
   background-color: var(--surface);
   border-bottom: 1px solid var(--border-color);
   padding-top: 0.6rem;
@@ -1015,27 +1015,31 @@ section[id] {
    ============================================================ */
 .process-timeline {
   position: relative;
-  margin-top: 0.5rem;
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  scroll-margin-top: calc(var(--navbar-height, 74px) + 2rem);
 }
 
 .timeline-item {
   position: relative;
-  padding-top: 3.5rem;
+  padding-top: 4.5rem;
+  margin-bottom: 2.25rem;
 }
 
-.timeline-item:first-child {
-  padding-top: 0;
+.timeline-item:last-child {
+  margin-bottom: 0;
 }
 
 .timeline-item::before {
   content: '';
   position: absolute;
-  top: 1.7rem;
-  bottom: 0;
+  top: 1.625rem;
+  bottom: -3.875rem;
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  background: linear-gradient(to bottom, var(--primary) 0%, rgba(var(--primary-rgb), 0.2) 100%);
+  background: var(--primary);
+  z-index: 0;
 }
 
 .timeline-item:last-child::before {
@@ -1044,7 +1048,7 @@ section[id] {
 
 .timeline-dot {
   position: absolute;
-  top: 0.3rem;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 52px;
@@ -1060,8 +1064,10 @@ section[id] {
   box-shadow: 0 0 0 6px var(--bg), 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
-.timeline-item:first-child .timeline-dot {
-  top: 0;
+.process-timeline .feature-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }
 
 /* ============================================================
@@ -1792,6 +1798,7 @@ body.rtl .dashboard-sidebar-toggle {
 
   .process-timeline {
     margin-top: 2rem;
+    padding-top: 0;
   }
 
   .timeline-item::before {
