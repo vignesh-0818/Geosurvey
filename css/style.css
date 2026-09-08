@@ -1245,6 +1245,13 @@ section[id] {
   margin-bottom: 1.1rem;
 }
 
+.main-footer h5 i.bi-compass,
+.main-footer h5 .brand-icon {
+  color: var(--primary);
+  font-size: 1.25rem;
+  vertical-align: -0.05em;
+}
+
 .main-footer p {
   color: var(--footer-text);
   font-size: 0.92rem;
