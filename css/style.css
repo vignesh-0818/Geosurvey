@@ -1802,6 +1802,19 @@ body.rtl .dashboard-sidebar-toggle {
   }
 
   .timeline-item::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 24px;
+    bottom: calc(-2.25rem - 24px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background: var(--primary);
+    z-index: 0;
+  }
+
+  .timeline-item:last-child::before {
     display: none;
   }
 
