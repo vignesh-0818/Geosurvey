@@ -699,12 +699,17 @@ section[id] {
 .service-card .card-title {
   font-size: 1.08rem;
   margin-bottom: 0.5rem;
+  min-height: 2.8rem;
 }
 
 .service-card .card-text {
   font-size: 0.9rem;
   color: var(--text-secondary);
   flex-grow: 1;
+}
+
+.service-card .btn {
+  margin-top: auto;
 }
 
 .team-card {
@@ -726,6 +731,7 @@ section[id] {
   width: 100%;
   height: 280px;
   object-fit: cover;
+  object-position: top center;
 }
 
 .team-card .card-body {
@@ -749,6 +755,8 @@ section[id] {
   border-radius: var(--radius);
   padding: 1.75rem;
   height: 100%;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -768,6 +776,7 @@ section[id] {
   font-style: italic;
   color: var(--text-primary);
   margin-bottom: 1.2rem;
+  flex-grow: 1;
 }
 
 .testimonial-avatar {
@@ -775,7 +784,13 @@ section[id] {
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
+  display: block;
   border: 2px solid rgba(var(--primary-rgb), 0.25);
+}
+
+.testimonial-card .d-flex {
+  margin-top: auto;
 }
 
 .testimonial-author {
@@ -817,6 +832,7 @@ section[id] {
 .blog-card .card-title {
   font-size: 1.05rem;
   margin-bottom: 0.5rem;
+  min-height: 2.8rem;
 }
 
 .blog-card .card-title a {
@@ -833,14 +849,19 @@ section[id] {
   flex-grow: 1;
 }
 
+.blog-card .btn {
+  margin-top: auto;
+}
+
 .blog-meta {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem 1rem;
   color: var(--text-secondary);
   font-size: 0.82rem;
   margin-bottom: 0.8rem;
+  min-height: 3.4rem;
 }
 
 .blog-meta .blog-category {
@@ -919,6 +940,9 @@ section[id] {
   text-align: center;
   height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -929,6 +953,7 @@ section[id] {
 
 .plan-card.featured {
   border: 2px solid var(--primary);
+  padding: calc(2.25rem - 1px) calc(1.75rem - 1px);
   box-shadow: var(--shadow-md);
 }
 
@@ -979,6 +1004,11 @@ section[id] {
 .plan-features {
   text-align: start;
   margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.plan-card .btn {
+  margin-top: auto;
 }
 
 .plan-features li {
@@ -1329,6 +1359,17 @@ section[id] {
   margin-bottom: 0;
   font-size: 0.85rem;
   color: var(--footer-text);
+}
+
+.footer-privacy-link {
+  color: var(--footer-text);
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer-privacy-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 /* ============================================================
@@ -1774,6 +1815,11 @@ body.rtl .dashboard-sidebar-toggle {
 
   .section-title {
     font-size: 1.8rem;
+  }
+
+  .team-card img {
+    height: 320px;
+    object-position: top center;
   }
 
   .page-hero {

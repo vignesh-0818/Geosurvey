@@ -128,6 +128,76 @@ function showNotification(message, type) {
 }
 
 // ============================================
+// VALIDATION HELPERS
+// ============================================
+function isValidEmail(email) {
+    if (!email) return false;
+    var trimmed = String(email).trim();
+    // Requires valid local part, @, domain, and a valid domain extension of at least 2 characters (.com, .org, .in, etc.)
+    var re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!re.test(trimmed)) return false;
+    if (trimmed.indexOf('..') !== -1 || trimmed.slice(-1) === '.') return false;
+    return true;
+}
+
+function isValidName(name) {
+    if (!name) return false;
+    var trimmed = String(name).trim();
+    // Reject single character names (minimum 2 characters)
+    if (trimmed.length < 2) return false;
+    // Reject names containing digits
+    if (/\d/.test(trimmed)) return false;
+    // Allow letters, spaces, hyphens, apostrophes, and periods (e.g. Dr. John Doe, O'Connor, Mary-Jane)
+    var allowedRegex = /^[a-zA-ZÀ-ÿ\u0100-\u017F\s'\-.]+$/;
+    if (!allowedRegex.test(trimmed)) return false;
+    // Must contain at least two letter characters
+    var letters = trimmed.match(/[a-zA-ZÀ-ÿ\u0100-\u017F]/g);
+    if (!letters || letters.length < 2) return false;
+    return true;
+}
+
+function isValidPhoneNumber(phone) {
+    if (!phone) return false;
+    var trimmed = String(phone).trim();
+    // Disallow alphabetic characters
+    if (/[a-zA-Z]/.test(trimmed)) return false;
+    // Allow only appropriate phone characters: +, digits, spaces, hyphens, parentheses, dots
+    if (!/^\+?[0-9\s\-().]{7,20}$/.test(trimmed)) return false;
+    var digits = trimmed.replace(/\D/g, '');
+    return digits.length >= 7 && digits.length <= 15;
+}
+
+function initPhoneValidation() {
+    var phoneInputs = document.querySelectorAll('input[type="tel"], [name="phone"], #contactPhone, #visitPhone');
+    phoneInputs.forEach(function(input) {
+        if (input._phoneInit) return;
+        input._phoneInit = true;
+
+        // Prevent typing alphabetic characters on keydown
+        input.addEventListener('keydown', function(e) {
+            if (e.ctrlKey || e.metaKey || [8, 9, 13, 27, 35, 36, 37, 38, 39, 40, 46].indexOf(e.keyCode) !== -1) {
+                return;
+            }
+            if (e.key && /^[a-zA-Z]$/.test(e.key)) {
+                e.preventDefault();
+            }
+        });
+
+        // Strip any letters entered (e.g. via paste or autofill)
+        input.addEventListener('input', function() {
+            var filtered = this.value.replace(/[a-zA-Z]/g, '');
+            if (this.value !== filtered) {
+                this.value = filtered;
+            }
+        });
+    });
+}
+if (typeof document !== 'undefined') {
+    if (document.readyState !== 'loading') { initPhoneValidation(); }
+    else { document.addEventListener('DOMContentLoaded', initPhoneValidation); }
+}
+
+// ============================================
 // CONTACT FORM
 // ============================================
 function handleContactForm(e) {
@@ -135,13 +205,56 @@ function handleContactForm(e) {
     var form = e.target;
     var name = form.querySelector('[name="name"]');
     var email = form.querySelector('[name="email"]');
+    var phone = form.querySelector('[name="phone"]');
     var subject = form.querySelector('[name="subject"]');
     var message = form.querySelector('[name="message"]');
 
-    if (!name.value.trim()) { showNotification('Please enter your name.', 'error'); name.focus(); return; }
-    if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { showNotification('Please enter a valid email address.', 'error'); email.focus(); return; }
-    if (!subject.value.trim()) { showNotification('Please enter a subject.', 'error'); subject.focus(); return; }
-    if (!message.value.trim()) { showNotification('Please enter your message.', 'error'); message.focus(); return; }
+    if (!name || !name.value.trim()) {
+        showNotification('Please enter your name.', 'error');
+        if (name) name.focus();
+        return;
+    }
+    if (!isValidName(name.value)) {
+        showNotification('Please enter a valid full name (minimum 2 letters, no numbers or special characters).', 'error');
+        if (name) name.focus();
+        return;
+    }
+
+    if (!email || !email.value.trim()) {
+        showNotification('Please enter your email address.', 'error');
+        if (email) email.focus();
+        return;
+    }
+    if (!isValidEmail(email.value)) {
+        showNotification('Please enter a valid email address with a complete domain (e.g. example@gmail.com).', 'error');
+        if (email) email.focus();
+        return;
+    }
+
+    if (phone && phone.value.trim()) {
+        var phoneVal = phone.value.trim();
+        if (/[a-zA-Z]/.test(phoneVal)) {
+            showNotification('Phone number cannot contain alphabetic characters.', 'error');
+            phone.focus();
+            return;
+        }
+        if (!isValidPhoneNumber(phoneVal)) {
+            showNotification('Please enter a valid phone number (7 to 15 digits, numbers and phone symbols only).', 'error');
+            phone.focus();
+            return;
+        }
+    }
+
+    if (!subject || !subject.value.trim()) {
+        showNotification('Please enter a subject.', 'error');
+        if (subject) subject.focus();
+        return;
+    }
+    if (!message || !message.value.trim()) {
+        showNotification('Please enter your message.', 'error');
+        if (message) message.focus();
+        return;
+    }
 
     showNotification('Message sent successfully! We will get back to you soon.', 'success');
     form.reset();
@@ -160,11 +273,45 @@ function handleSiteVisitForm(e) {
     var date = form.querySelector('[name="date"]');
     var address = form.querySelector('[name="address"]');
 
-    if (!name || !name.value.trim()) { showNotification('Please enter your full name.', 'error'); if (name) name.focus(); return; }
-    if (!email || !email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { showNotification('Please enter a valid email address.', 'error'); if (email) email.focus(); return; }
-    if (!phone || !phone.value.trim()) { showNotification('Please enter a phone number.', 'error'); if (phone) phone.focus(); return; }
-    var digits = (phone ? phone.value : '').replace(/\D/g, '');
-    if (digits.length !== 10) { showNotification('Please enter a valid 10-digit phone number.', 'error'); if (phone) phone.focus(); return; }
+    if (!name || !name.value.trim()) {
+        showNotification('Please enter your full name.', 'error');
+        if (name) name.focus();
+        return;
+    }
+    if (!isValidName(name.value)) {
+        showNotification('Please enter a valid full name (minimum 2 letters, no numbers or special characters).', 'error');
+        if (name) name.focus();
+        return;
+    }
+
+    if (!email || !email.value.trim()) {
+        showNotification('Please enter your email address.', 'error');
+        if (email) email.focus();
+        return;
+    }
+    if (!isValidEmail(email.value)) {
+        showNotification('Please enter a valid email address with a complete domain (e.g. example@gmail.com).', 'error');
+        if (email) email.focus();
+        return;
+    }
+
+    if (!phone || !phone.value.trim()) {
+        showNotification('Please enter a phone number.', 'error');
+        if (phone) phone.focus();
+        return;
+    }
+    var phoneVal = phone.value.trim();
+    if (/[a-zA-Z]/.test(phoneVal)) {
+        showNotification('Phone number cannot contain alphabetic characters.', 'error');
+        phone.focus();
+        return;
+    }
+    if (!isValidPhoneNumber(phoneVal)) {
+        showNotification('Please enter a valid phone number (7 to 15 digits).', 'error');
+        phone.focus();
+        return;
+    }
+
     if (!service || !service.value) { showNotification('Please select a service.', 'error'); if (service) service.focus(); return; }
     if (!date || !date.value) { showNotification('Please select a preferred date.', 'error'); if (date) date.focus(); return; }
     var visitDate = new Date(date.value + 'T00:00:00');
@@ -182,8 +329,8 @@ function handleNewsletter(e) {
     if (e) e.preventDefault();
     var form = e.target || e;
     var input = form.querySelector('input[type="email"]');
-    if (!input || !input.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
-        showNotification('Please enter a valid email address.', 'error');
+    if (!input || !input.value.trim() || !isValidEmail(input.value)) {
+        showNotification('Please enter a valid email address with a complete domain (e.g. example@gmail.com).', 'error');
         return;
     }
     showNotification('Successfully subscribed to our newsletter!', 'success');
@@ -522,6 +669,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     setFooterYear();
     initBackToTop();
+    initPhoneValidation();
 
     // Close mobile menu on resize to desktop
     window.addEventListener('resize', function() {
