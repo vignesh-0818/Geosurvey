@@ -46,8 +46,7 @@
         <div class="d-flex align-items-center gap-2 nav-actions">
           <button class="theme-toggle-btn" type="button" onclick="toggleTheme()" title="Toggle Theme"><i
               class="bi bi-moon"></i></button>
-          <button class="rtl-toggle-btn" type="button" onclick="toggleRTL()" title="Toggle RTL"><i
-              class="bi bi-text-right"></i></button>
+          <button class="rtl-toggle-btn" type="button" onclick="toggleRTL()" title="Toggle RTL" aria-label="Toggle RTL"><i class="bi bi-translate"></i><span class="rtl-text">RTL</span></button>
           <a href="contact.html#site-visit" class="btn nav-cta-btn">Request Site Visit</a>
         </div>
       </div>
@@ -57,19 +56,25 @@
 
   <!-- ================= HERO SECTION ================= -->
   <section class="hero-section"
-    style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&h=1080&fit=crop');">
+    style="background-image:url('images/hero-survey-landscape.jpg');">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <div class="row">
         <div class="col-lg-8">
           <div class="hero-badge"><i class="bi bi-award me-1"></i> Certified Surveying &amp; Valuation Experts</div>
           <h1>Accurate Land Surveys.<br>Reliable Property Valuations.</h1>
-          <p>Professional surveying and property valuation services backed by precision, certified expertise, and
-            reliable reporting.</p>
-          <div class="d-flex gap-3 flex-wrap mb-4">
-            <a href="contact.html" class="btn btn-primary-custom btn-lg"><i class="bi bi-compass me-2"></i>Request a
-              Site Visit</a>
+          <p>Professional land surveying and property valuation services backed by precision, certified expertise, and reliable reporting. Delivering boundary services, technical sketching, geodetic network establishment, and legal drawn maps for residential, commercial, and infrastructure developments.</p>
+          <div class="d-flex gap-3 flex-wrap mb-3">
+            <a href="contact.html" class="btn btn-primary-custom btn-lg"><i class="bi bi-compass me-2"></i>Request a Site Visit</a>
             <a href="services.html" class="btn btn-white btn-lg"><i class="bi bi-grid me-2"></i>Explore Services</a>
+          </div>
+          <div class="d-flex flex-wrap gap-2 mb-4" style="max-width:720px;">
+            <span class="hero-feature-chip"><i class="bi bi-shield-check"></i>Boundary Services</span>
+            <span class="hero-feature-chip"><i class="bi bi-pencil-square"></i>Technical Sketching</span>
+            <span class="hero-feature-chip"><i class="bi bi-diagram-3"></i>Network Establishment</span>
+            <span class="hero-feature-chip"><i class="bi bi-map"></i>Drawn Maps &amp; CAD</span>
+            <span class="hero-feature-chip"><i class="bi bi-currency-dollar"></i>Property Valuation</span>
+            <span class="hero-feature-chip"><i class="bi bi-geo-alt"></i>Land Surveying</span>
           </div>
           <div class="row g-3" style="max-width:600px;">
             <div class="col-3 text-center">
@@ -145,8 +150,8 @@
       <div class="row g-4">
         <div class="col-lg-3 col-md-6">
           <div class="service-card">
-            <img src="https://images.unsplash.com/photo-1706380003139-7471c33ca2b2?w=600&h=400&fit=crop"
-              class="card-img-top" alt="Boundary survey being conducted">
+            <img src="images/boundary-survey.jpg"
+              class="card-img-top" alt="Boundary survey being conducted with total station and boundary markers">
             <div class="card-body">
               <div class="mb-2"><i class="bi bi-diagram-3" style="font-size:1.8rem;color:var(--primary);"></i></div>
               <h5 class="card-title">Boundary Surveys</h5>
@@ -325,35 +330,67 @@
     <div class="container">
       <div class="text-center mb-5">
         <h2 class="section-title">Modern Surveying Technology</h2>
-        <p class="section-subtitle">We leverage cutting-edge technology to deliver exceptional accuracy.</p>
+        <p class="section-subtitle">We leverage state-of-the-art surveying instruments and GIS software for unmatched spatial precision.</p>
       </div>
       <div class="row g-4">
         <div class="col-lg-3 col-md-6">
-          <div class="feature-card">
-            <div class="icon"><i class="bi bi-broadcast-pin"></i></div>
-            <h5>GPS/GNSS</h5>
-            <p>High-precision satellite positioning for millimetre accuracy.</p>
+          <div class="tech-card">
+            <div class="tech-card-img-wrap">
+              <img src="images/precision-surveying.jpg" alt="High-precision GNSS RTK satellite surveying receiver stationed in field">
+            </div>
+            <div class="tech-card-body">
+              <span class="tech-card-badge"><i class="bi bi-broadcast-pin"></i> Satellite Geodesy</span>
+              <h5 class="tech-card-title">GPS / GNSS RTK</h5>
+              <p class="tech-card-desc">Multi-frequency satellite positioning delivering real-time millimeter accuracy for boundary line determination and geodetic network control.</p>
+              <div class="tech-card-footer">
+                <i class="bi bi-check2-circle"></i> Sub-centimeter Field Precision
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
-          <div class="feature-card">
-            <div class="icon"><i class="bi bi-camera"></i></div>
-            <h5>Drone Surveys</h5>
-            <p>Aerial mapping and photogrammetry for large-scale projects.</p>
+          <div class="tech-card">
+            <div class="tech-card-img-wrap">
+              <img src="images/drone-surveying.jpg" alt="Commercial drone surveying unit capturing high-resolution aerial mapping">
+            </div>
+            <div class="tech-card-body">
+              <span class="tech-card-badge"><i class="bi bi-camera"></i> Aerial Photogrammetry</span>
+              <h5 class="tech-card-title">Drone UAV Mapping</h5>
+              <p class="tech-card-desc">High-resolution orthomosaic imagery, digital surface modeling (DSM), and volumetric earthwork calculations across expansive properties.</p>
+              <div class="tech-card-footer">
+                <i class="bi bi-check2-circle"></i> Rapid Large-Scale Coverage
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
-          <div class="feature-card">
-            <div class="icon"><i class="bi bi-printer"></i></div>
-            <h5>3D Scanning</h5>
-            <p>Detailed terrain modeling with laser scanning technology.</p>
+          <div class="tech-card">
+            <div class="tech-card-img-wrap">
+              <img src="images/tech-laser-scanning.jpg" alt="3D terrestrial LiDAR laser scanner on tripod scanning architectural terrain">
+            </div>
+            <div class="tech-card-body">
+              <span class="tech-card-badge"><i class="bi bi-bounding-box-circles"></i> Spatial Point Cloud</span>
+              <h5 class="tech-card-title">3D Laser Scanning</h5>
+              <p class="tech-card-desc">Terrestrial LiDAR capturing millions of 3D spatial points per second for complex architectural structures, as-built verifications, and terrain.</p>
+              <div class="tech-card-footer">
+                <i class="bi bi-check2-circle"></i> BIM &amp; CAD Direct Import
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
-          <div class="feature-card">
-            <div class="icon"><i class="bi bi-cpu"></i></div>
-            <h5>Digital Processing</h5>
-            <p>Advanced data analysis and GIS mapping software.</p>
+          <div class="tech-card">
+            <div class="tech-card-img-wrap">
+              <img src="images/tech-gis-processing.jpg" alt="GIS analyst analyzing AutoCAD parcel maps and topographic contours on dual monitors">
+            </div>
+            <div class="tech-card-body">
+              <span class="tech-card-badge"><i class="bi bi-cpu"></i> Geospatial Analytics</span>
+              <h5 class="tech-card-title">Digital Processing &amp; GIS</h5>
+              <p class="tech-card-desc">Advanced data processing converting field observations into AutoCAD (.DWG), MicroStation, and ArcGIS datasets for municipal approval.</p>
+              <div class="tech-card-footer">
+                <i class="bi bi-check2-circle"></i> Certified Spatial Deliverables
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -365,39 +402,47 @@
     <div class="container">
       <div class="text-center mb-5">
         <h2 class="section-title">Our Process</h2>
-        <p class="section-subtitle">A systematic approach that ensures accuracy and client satisfaction.</p>
+        <p class="section-subtitle">A systematic approach that ensures accuracy, legal compliance, and client satisfaction.</p>
       </div>
       <div class="row g-4 text-center">
         <div class="col-lg-3 col-md-6">
           <div class="step-card">
-            <div class="step-number">1</div>
-            <i class="bi bi-chat-dots mb-3" style="font-size:2rem;color:var(--primary);"></i>
-            <h6 class="mb-2">Consultation</h6>
-            <p class="text-muted mb-0">Discuss your requirements and objectives.</p>
+            <div class="step-icon-badge">
+              <span class="step-num">1</span>
+              <i class="bi bi-chat-dots"></i>
+            </div>
+            <h6>Consultation</h6>
+            <p>Discuss your project scope, deed records, boundary history, and surveying requirements.</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <div class="step-card">
-            <div class="step-number">2</div>
-            <i class="bi bi-geo-alt mb-3" style="font-size:2rem;color:var(--primary);"></i>
-            <h6 class="mb-2">Site Visit</h6>
-            <p class="text-muted mb-0">Assess the property and site conditions.</p>
+            <div class="step-icon-badge">
+              <span class="step-num">2</span>
+              <i class="bi bi-geo-alt"></i>
+            </div>
+            <h6>Site Visit</h6>
+            <p>Perform initial on-site reconnaissance, monument recovery, and evaluate terrain access.</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <div class="step-card">
-            <div class="step-number">3</div>
-            <i class="bi bi-radar mb-3" style="font-size:2rem;color:var(--primary);"></i>
-            <h6 class="mb-2">Field Survey</h6>
-            <p class="text-muted mb-0">Collect precise measurement data on-site.</p>
+            <div class="step-icon-badge">
+              <span class="step-num">3</span>
+              <i class="bi bi-radar"></i>
+            </div>
+            <h6>Field Survey</h6>
+            <p>Collect high-precision spatial observations using GNSS RTK, total stations, and drones.</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <div class="step-card">
-            <div class="step-number">4</div>
-            <i class="bi bi-file-earmark-check mb-3" style="font-size:2rem;color:var(--primary);"></i>
-            <h6 class="mb-2">Report Delivery</h6>
-            <p class="text-muted mb-0">Comprehensive documentation and certification.</p>
+            <div class="step-icon-badge">
+              <span class="step-num">4</span>
+              <i class="bi bi-file-earmark-check"></i>
+            </div>
+            <h6>Report Delivery</h6>
+            <p>Deliver certified legal plats, peer-reviewed valuation reports, and digital CAD files.</p>
           </div>
         </div>
       </div>
@@ -411,35 +456,48 @@
   <section class="section-padding fade-in">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 class="section-title">Coverage Areas</h2>
-        <p class="section-subtitle">We serve clients across multiple regions and property types.</p>
+        <h2 class="section-title">Surveying Service Coverage</h2>
+        <p class="section-subtitle">We deploy certified field survey crews across multiple regional districts and property environments.</p>
       </div>
-      <div class="row g-4 justify-content-center">
-        <div class="col-lg-3 col-md-6">
-          <div class="coverage-card">
-            <div class="icon"><i class="bi bi-geo-alt"></i></div>
-            <h6>Regional Coverage</h6>
-            <p class="text-muted mb-0" style="font-size:0.9rem;">Multiple districts and metro areas</p>
+      <div class="row align-items-center g-5 mb-4">
+        <div class="col-lg-6">
+          <div class="rounded shadow overflow-hidden" style="border:1px solid var(--border-color);border-radius:16px;">
+            <img src="images/service-coverage-map.jpg" alt="Regional geographic coverage map of GeoSurvey Pro service areas" class="img-fluid w-100" style="display:block;">
           </div>
         </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="coverage-card">
-            <div class="icon"><i class="bi bi-house"></i></div>
-            <h6>All Property Types</h6>
-            <p class="text-muted mb-0" style="font-size:0.9rem;">Residential, commercial, industrial</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="coverage-card">
-            <div class="icon"><i class="bi bi-map"></i></div>
-            <h6>Full Service</h6>
-            <p class="text-muted mb-0" style="font-size:0.9rem;">Surveying, valuation, certification</p>
+        <div class="col-lg-6">
+          <h3 class="mb-3">Comprehensive Regional Service Network</h3>
+          <p class="text-muted mb-4">Our licensed land surveyors and certified valuation experts provide dedicated on-site services across urban centers, commercial developments, agricultural zones, and infrastructure corridors with guaranteed fast turnarounds.</p>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="p-3 rounded h-100" style="background:var(--surface);border:1px solid var(--border-color);border-radius:12px;">
+                <h6 class="fw-bold mb-1"><i class="bi bi-geo-alt-fill text-primary me-2"></i>Precision City Urban</h6>
+                <p class="text-muted small mb-0">Cadastral boundary surveys, property valuations, title ALTA/NSPS surveys.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-3 rounded h-100" style="background:var(--surface);border:1px solid var(--border-color);border-radius:12px;">
+                <h6 class="fw-bold mb-1"><i class="bi bi-buildings text-primary me-2"></i>Riverside Commercial</h6>
+                <p class="text-muted small mb-0">Commercial site surveys, architectural 3D scanning, subdivision planning.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-3 rounded h-100" style="background:var(--surface);border:1px solid var(--border-color);border-radius:12px;">
+                <h6 class="fw-bold mb-1"><i class="bi bi-tree text-primary me-2"></i>Greenfield Agricultural</h6>
+                <p class="text-muted small mb-0">Rural boundary demarcations, acreage mapping, topographic contouring.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-3 rounded h-100" style="background:var(--surface);border:1px solid var(--border-color);border-radius:12px;">
+                <h6 class="fw-bold mb-1"><i class="bi bi-cone-striped text-primary me-2"></i>Highland Infrastructure</h6>
+                <p class="text-muted small mb-0">Construction layout, road corridor mapping, civil engineering as-builts.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div class="text-center mt-4">
-        <a href="coverage-area.html" class="btn btn-primary-custom"><i class="bi bi-map me-2"></i>View Coverage
-          Details</a>
+        <a href="coverage-area.html" class="btn btn-primary-custom"><i class="bi bi-map me-2"></i>Explore Full Coverage Map</a>
       </div>
     </div>
   </section>

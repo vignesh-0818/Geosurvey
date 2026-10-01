@@ -25,7 +25,7 @@
             </ul>
             <div class="d-flex align-items-center gap-2 nav-actions">
                 <button class="theme-toggle-btn" type="button" onclick="toggleTheme()" title="Toggle Theme"><i class="bi bi-moon"></i></button>
-                <button class="rtl-toggle-btn" type="button" onclick="toggleRTL()" title="Toggle RTL"><i class="bi bi-text-right"></i></button>
+                <button class="rtl-toggle-btn" type="button" onclick="toggleRTL()" title="Toggle RTL" aria-label="Toggle RTL"><i class="bi bi-translate"></i><span class="rtl-text">RTL</span></button>
                 <a href="contact.html#site-visit" class="btn nav-cta-btn">Request Site Visit</a>
             </div>
         </div>
@@ -56,22 +56,50 @@
     <div class="row g-4">
       <div class="col-lg-3 col-md-6">
         <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1706380003139-7471c33ca2b2?w=600&h=400&fit=crop" class="card-img-top" alt="Boundary survey being conducted">
+          <img src="images/boundary-survey.jpg" class="card-img-top" alt="Boundary survey with surveyor and total station">
           <div class="card-body">
             <div class="mb-2"><i class="bi bi-diagram-3" style="font-size:1.8rem;color:var(--primary);"></i></div>
             <h5 class="card-title">1. Boundary Surveys</h5>
-            <p class="card-text">Determine exact property boundaries with precision using advanced GPS technology.</p>
+            <p class="card-text">Legal boundary demarcation, pin recovery, and dispute resolution for land parcels.</p>
+            <div class="service-details mb-3">
+              <div class="service-meta-item">
+                <span class="meta-label">Work Performed</span>
+                <span class="meta-val">Pin staking, traverse checks & monument recovery</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Industries</span>
+                <span class="meta-val">Real Estate, Residential & Commercial Development</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Deliverable Value</span>
+                <span class="meta-val">Certified boundary plat & legal deed description</span>
+              </div>
+            </div>
             <a href="service-boundary-surveys.html" class="btn btn-outline-custom btn-sm">View Details</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1768501362994-ecf15566cf53?w=600&h=400&fit=crop" class="card-img-top" alt="Topographic survey equipment">
+          <img src="https://images.unsplash.com/photo-1768501362994-ecf15566cf53?w=600&h=400&fit=crop" class="card-img-top" alt="Topographic survey terrain contour mapping">
           <div class="card-body">
             <div class="mb-2"><i class="bi bi-map" style="font-size:1.8rem;color:var(--primary);"></i></div>
             <h5 class="card-title">2. Topographic Mapping</h5>
-            <p class="card-text">Create detailed maps with elevation contours and terrain features.</p>
+            <p class="card-text">High-accuracy 3D terrain elevation models, contours, and physical feature mapping.</p>
+            <div class="service-details mb-3">
+              <div class="service-meta-item">
+                <span class="meta-label">Work Performed</span>
+                <span class="meta-val">Contour modeling, breaklines & utility mapping</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Industries</span>
+                <span class="meta-val">Civil Engineering, Architecture & Site Drainage</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Deliverable Value</span>
+                <span class="meta-val">Digital elevation models (DEM) & 3D CAD files</span>
+              </div>
+            </div>
             <a href="service-topographic-mapping.html" class="btn btn-outline-custom btn-sm">View Details</a>
           </div>
         </div>
@@ -82,7 +110,21 @@
           <div class="card-body">
             <div class="mb-2"><i class="bi bi-currency-dollar" style="font-size:1.8rem;color:var(--primary);"></i></div>
             <h5 class="card-title">3. Property Valuation</h5>
-            <p class="card-text">Get accurate market value assessments for all property types.</p>
+            <p class="card-text">Certified market appraisal and valuation for residential, commercial & agricultural properties.</p>
+            <div class="service-details mb-3">
+              <div class="service-meta-item">
+                <span class="meta-label">Work Performed</span>
+                <span class="meta-val">Comparable sales analysis & asset inspection</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Industries</span>
+                <span class="meta-val">Banking, Mortgage Lending, Legal & Tax Assessment</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Deliverable Value</span>
+                <span class="meta-val">USPAP-compliant formal valuation report</span>
+              </div>
+            </div>
             <a href="service-property-valuation.html" class="btn btn-outline-custom btn-sm">View Details</a>
           </div>
         </div>
@@ -93,7 +135,21 @@
           <div class="card-body">
             <div class="mb-2"><i class="bi bi-building" style="font-size:1.8rem;color:var(--primary);"></i></div>
             <h5 class="card-title">4. Construction Surveys</h5>
-            <p class="card-text">Reference points and markers ensuring accurate building placement.</p>
+            <p class="card-text">High-precision layout staking and alignment control ensuring accurate structural placement.</p>
+            <div class="service-details mb-3">
+              <div class="service-meta-item">
+                <span class="meta-label">Work Performed</span>
+                <span class="meta-val">Foundation staking, offset pins & grade checks</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Industries</span>
+                <span class="meta-val">General Contractors, Heavy Civil & Infrastructure</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Deliverable Value</span>
+                <span class="meta-val">As-built CAD verification & tolerance sign-offs</span>
+              </div>
+            </div>
             <a href="service-construction-surveys.html" class="btn btn-outline-custom btn-sm">View Details</a>
           </div>
         </div>
@@ -104,7 +160,21 @@
           <div class="card-body">
             <div class="mb-2"><i class="bi bi-geo-alt" style="font-size:1.8rem;color:var(--primary);"></i></div>
             <h5 class="card-title">5. Site Surveys</h5>
-            <p class="card-text">Comprehensive site analysis for development planning and feasibility studies.</p>
+            <p class="card-text">Comprehensive site topography, right-of-way easement analysis, and development feasibility studies.</p>
+            <div class="service-details mb-3">
+              <div class="service-meta-item">
+                <span class="meta-label">Work Performed</span>
+                <span class="meta-val">Perimeter audits, easement mapping & setback analysis</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Industries</span>
+                <span class="meta-val">Urban Planning, Real Estate Developers & Municipalities</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Deliverable Value</span>
+                <span class="meta-val">Comprehensive site feasibility plan & zoning constraints</span>
+              </div>
+            </div>
             <a href="service-site-surveys.html" class="btn btn-outline-custom btn-sm">View Details</a>
           </div>
         </div>
@@ -114,8 +184,22 @@
           <img src="https://images.unsplash.com/photo-1757170889571-24e12e70dd21?w=600&h=400&fit=crop" class="card-img-top" alt="Land mapping aerial view">
           <div class="card-body">
             <div class="mb-2"><i class="bi bi-pin-map" style="font-size:1.8rem;color:var(--primary);"></i></div>
-            <h5 class="card-title">6. Land Mapping</h5>
-            <p class="card-text">Accurate land maps for planning, development, and legal documentation.</p>
+            <h5 class="card-title">6. Land Mapping & GIS</h5>
+            <p class="card-text">Large-scale cadastral parcel stitching, georeferenced aerial maps, and spatial database integration.</p>
+            <div class="service-details mb-3">
+              <div class="service-meta-item">
+                <span class="meta-label">Work Performed</span>
+                <span class="meta-val">Cadastral digitization, GIS layers & georeferencing</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Industries</span>
+                <span class="meta-val">Government, Agriculture, Forestry & Utility Networks</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Deliverable Value</span>
+                <span class="meta-val">High-res GeoTIFFs, shapefiles & interactive GIS portals</span>
+              </div>
+            </div>
             <a href="service-land-mapping.html" class="btn btn-outline-custom btn-sm">View Details</a>
           </div>
         </div>
@@ -126,7 +210,21 @@
           <div class="card-body">
             <div class="mb-2"><i class="bi bi-file-earmark-text" style="font-size:1.8rem;color:var(--primary);"></i></div>
             <h5 class="card-title">7. Market Valuation Reports</h5>
-            <p class="card-text">Detailed reports for market analysis, investments, and financial planning.</p>
+            <p class="card-text">Institutional property valuation dossiers for capital investments, balance sheets, and tax disputes.</p>
+            <div class="service-details mb-3">
+              <div class="service-meta-item">
+                <span class="meta-label">Work Performed</span>
+                <span class="meta-val">DCF modeling, cap-rate audits & risk assessment</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Industries</span>
+                <span class="meta-val">Private Equity, Commercial Lenders & Legal Firms</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Deliverable Value</span>
+                <span class="meta-val">Certified valuation dossier & statutory filing report</span>
+              </div>
+            </div>
             <a href="service-market-valuation-reports.html" class="btn btn-outline-custom btn-sm">View Details</a>
           </div>
         </div>
@@ -137,7 +235,21 @@
           <div class="card-body">
             <div class="mb-2"><i class="bi bi-award" style="font-size:1.8rem;color:var(--primary);"></i></div>
             <h5 class="card-title">8. Survey Certifications</h5>
-            <p class="card-text">Official certifications for legal, regulatory, and compliance purposes.</p>
+            <p class="card-text">Officially stamped and licensed surveying certificates for statutory and municipal permit approval.</p>
+            <div class="service-details mb-3">
+              <div class="service-meta-item">
+                <span class="meta-label">Work Performed</span>
+                <span class="meta-val">Deed verification, municipal audit & PLS sealing</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Industries</span>
+                <span class="meta-val">Title Companies, Municipal Boards & Land Courts</span>
+              </div>
+              <div class="service-meta-item">
+                <span class="meta-label">Deliverable Value</span>
+                <span class="meta-val">State-licensed surveyor seal & record of survey plat</span>
+              </div>
+            </div>
             <a href="service-survey-certifications.html" class="btn btn-outline-custom btn-sm">View Details</a>
           </div>
         </div>

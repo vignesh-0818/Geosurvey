@@ -51,8 +51,11 @@ function toggleRTL() {
 function updateRTLIcon() {
     const isRTL = document.body.classList.contains('rtl');
     document.querySelectorAll('.rtl-toggle-btn').forEach(btn => {
-        btn.innerHTML = isRTL ? '<i class="bi bi-text-left"></i>' : '<i class="bi bi-text-right"></i>';
+        btn.innerHTML = isRTL 
+            ? '<i class="bi bi-translate"></i><span class="rtl-text">LTR</span>' 
+            : '<i class="bi bi-translate"></i><span class="rtl-text">RTL</span>';
         btn.title = isRTL ? 'Switch to LTR' : 'Switch to RTL';
+        btn.setAttribute('aria-label', isRTL ? 'Switch to LTR' : 'Switch to RTL');
     });
 }
 
