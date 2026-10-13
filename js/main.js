@@ -421,12 +421,16 @@ function applyBlogFilters() {
 }
 
 function filterBlogCategory(category, el) {
-    activeBlogCategory = category || 'all';
+    var rawCat = (category || 'all').toString().trim();
+    rawCat = rawCat.replace(/\+/g, ' ');
+    activeBlogCategory = rawCat;
+
+    var normTarget = activeBlogCategory.toLowerCase();
 
     // Update active class on category links
     document.querySelectorAll('.blog-category-link').forEach(function(link) {
-        var linkCat = link.getAttribute('data-category');
-        if (linkCat === activeBlogCategory) {
+        var linkCat = (link.getAttribute('data-category') || '').trim().toLowerCase();
+        if ((normTarget === 'all' && (linkCat === 'all' || !linkCat)) || (normTarget !== 'all' && linkCat === normTarget)) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
@@ -720,7 +724,18 @@ document.addEventListener('DOMContentLoaded', function() {
         var urlParams = new URLSearchParams(window.location.search);
         var categoryParam = urlParams.get('category');
         if (categoryParam) {
+            try {
+                categoryParam = decodeURIComponent(categoryParam).replace(/\+/g, ' ').trim();
+            } catch (err) {}
             filterBlogCategory(categoryParam);
+            setTimeout(function() {
+                var targetElem = document.getElementById('activeCategoryBanner') || document.getElementById('blogGrid');
+                if (targetElem) {
+                    var navHeight = (document.querySelector('.main-navbar') || {}).offsetHeight || 0;
+                    var elemTop = targetElem.getBoundingClientRect().top + window.pageYOffset - navHeight - 30;
+                    window.scrollTo({ top: Math.max(0, elemTop), behavior: 'smooth' });
+                }
+            }, 150);
         }
     }
 });

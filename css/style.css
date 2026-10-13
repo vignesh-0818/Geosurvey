@@ -386,7 +386,7 @@ body.dark-mode .btn-outline-custom:focus {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(7, 34, 20, 0.92) 0%, rgba(15, 65, 40, 0.78) 55%, rgba(10, 40, 26, 0.55) 100%);
+  background: linear-gradient(120deg, rgba(7, 34, 20, 0.84) 0%, rgba(10, 48, 28, 0.60) 55%, rgba(10, 40, 26, 0.35) 100%);
 }
 
 .hero-content {
@@ -442,7 +442,7 @@ body.dark-mode .btn-outline-custom:focus {
   position: relative;
   background-color: var(--primary-dark);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   padding: 5.5rem 0 4rem;
   text-align: center;
@@ -453,8 +453,9 @@ body.dark-mode .btn-outline-custom:focus {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(7, 32, 18, 0.9) 0%, rgba(10, 61, 32, 0.82) 55%, rgba(13, 58, 36, 0.72) 100%);
+  background: linear-gradient(180deg, rgba(7, 24, 16, 0.32) 0%, rgba(10, 32, 20, 0.44) 50%, rgba(7, 24, 16, 0.56) 100%);
   z-index: 0;
+  pointer-events: none;
 }
 
 .page-hero .container {
@@ -464,43 +465,57 @@ body.dark-mode .btn-outline-custom:focus {
 
 .page-hero h1 {
   color: #ffffff;
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   font-weight: 700;
   margin-bottom: 0.6rem;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85), 0 1px 4px rgba(0, 0, 0, 0.95);
 }
 
 .page-hero p {
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.95);
   font-size: 1.05rem;
-  max-width: 620px;
+  max-width: 640px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.2rem;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
 }
 
 .page-hero .breadcrumb {
+  display: inline-flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 0;
-  background: transparent;
+  margin-top: 0.4rem;
+  padding: 0.45rem 1.35rem;
+  background: rgba(7, 24, 16, 0.48);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 50rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.32);
 }
 
 .page-hero .breadcrumb-item,
 .page-hero .breadcrumb-item a {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .page-hero .breadcrumb-item a:hover {
-  color: #ffffff;
+  color: var(--secondary);
 }
 
 .page-hero .breadcrumb-item.active {
   color: #ffffff;
   font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .page-hero .breadcrumb-item + .breadcrumb-item::before {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ============================================================
@@ -1636,11 +1651,33 @@ body.dark-mode .form-control[type="date"]::-webkit-calendar-picker-indicator:hov
   margin-bottom: 1.1rem;
 }
 
+.main-footer .footer-brand {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.main-footer .footer-brand:hover {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
 .main-footer h5 i.bi-compass,
-.main-footer h5 .brand-icon {
+.main-footer h5 .brand-icon,
+.main-footer .footer-brand i.bi-compass,
+.main-footer .footer-brand .brand-icon {
   color: var(--primary);
   font-size: 1.25rem;
   vertical-align: -0.05em;
+  transition: color 0.2s ease;
+}
+
+.main-footer .footer-brand:hover i.bi-compass,
+.main-footer .footer-brand:hover .brand-icon {
+  color: var(--secondary);
 }
 
 .main-footer p {
@@ -1969,11 +2006,16 @@ body.dark-mode .section-bg {
 }
 
 body.dark-mode .hero-overlay {
-  background: linear-gradient(120deg, rgba(4, 12, 10, 0.92) 0%, rgba(8, 28, 20, 0.8) 55%, rgba(6, 18, 14, 0.6) 100%);
+  background: linear-gradient(120deg, rgba(4, 14, 10, 0.84) 0%, rgba(8, 26, 18, 0.60) 55%, rgba(6, 18, 14, 0.38) 100%);
 }
 
 body.dark-mode .page-hero::before {
-  background: linear-gradient(135deg, rgba(2, 8, 6, 0.94) 0%, rgba(4, 16, 10, 0.88) 55%, rgba(25, 75, 45, 0.8) 100%);
+  background: linear-gradient(180deg, rgba(11, 18, 28, 0.38) 0%, rgba(10, 24, 20, 0.48) 50%, rgba(11, 18, 28, 0.60) 100%);
+}
+
+body.dark-mode .page-hero .breadcrumb {
+  background: rgba(11, 18, 28, 0.58);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 body.dark-mode .error-page,
