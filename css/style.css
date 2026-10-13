@@ -100,8 +100,9 @@ img {
   max-width: 100%;
 }
 
-section[id] {
-  scroll-margin-top: var(--navbar-height);
+section[id],
+#site-visit {
+  scroll-margin-top: calc(var(--navbar-height) + 1.25rem);
 }
 
 /* ============================================================
@@ -1552,6 +1553,9 @@ body.dark-mode .accordion-button:focus::after {
   font-weight: 500;
   font-size: 0.88rem;
   color: var(--text-primary);
+  display: block;
+  width: 100%;
+  text-align: left;
 }
 
 .form-control,
@@ -1562,11 +1566,16 @@ body.dark-mode .accordion-button:focus::after {
   border-radius: 0.55rem;
   padding: 0.6rem 0.85rem;
   font-size: 0.95rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: left;
 }
 
 .form-control::placeholder {
   color: var(--text-secondary);
   opacity: 0.75;
+  text-align: left;
 }
 
 .form-control:focus,
@@ -1577,8 +1586,78 @@ body.dark-mode .accordion-button:focus::after {
   color: var(--text-primary);
 }
 
+/* Phone Number Input - Explicit LTR and RTL Alignment */
+html[dir="ltr"] input[type="tel"],
+html[dir="ltr"] .form-control[type="tel"],
+body:not(.rtl) input[type="tel"],
+body:not(.rtl) .form-control[type="tel"] {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+}
+
+html[dir="ltr"] input[type="tel"]::placeholder,
+html[dir="ltr"] .form-control[type="tel"]::placeholder,
+body:not(.rtl) input[type="tel"]::placeholder,
+body:not(.rtl) .form-control[type="tel"]::placeholder {
+  text-align: left;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+html[dir="rtl"] input[type="tel"],
+html[dir="rtl"] .form-control[type="tel"],
+body.rtl input[type="tel"],
+body.rtl .form-control[type="tel"] {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: isolate;
+}
+
+html[dir="rtl"] input[type="tel"]::placeholder,
+html[dir="rtl"] .form-control[type="tel"]::placeholder,
+body.rtl input[type="tel"]::placeholder,
+body.rtl .form-control[type="tel"]::placeholder {
+  text-align: right;
+  direction: rtl;
+  unicode-bidi: isolate;
+}
+
+/* Date Picker - Explicit LTR and RTL Alignment */
 .form-control[type="date"] {
   min-height: 44px;
+}
+
+html[dir="ltr"] input[type="date"],
+html[dir="ltr"] .form-control[type="date"],
+body:not(.rtl) input[type="date"],
+body:not(.rtl) .form-control[type="date"] {
+  direction: ltr;
+  text-align: left;
+}
+
+html[dir="ltr"] input[type="date"]::-webkit-date-and-time-value,
+html[dir="ltr"] .form-control[type="date"]::-webkit-date-and-time-value,
+body:not(.rtl) input[type="date"]::-webkit-date-and-time-value,
+body:not(.rtl) .form-control[type="date"]::-webkit-date-and-time-value {
+  text-align: left;
+  direction: ltr;
+}
+
+html[dir="rtl"] input[type="date"],
+html[dir="rtl"] .form-control[type="date"],
+body.rtl input[type="date"],
+body.rtl .form-control[type="date"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] input[type="date"]::-webkit-date-and-time-value,
+html[dir="rtl"] .form-control[type="date"]::-webkit-date-and-time-value,
+body.rtl input[type="date"]::-webkit-date-and-time-value,
+body.rtl .form-control[type="date"]::-webkit-date-and-time-value {
+  text-align: right;
+  direction: rtl;
 }
 
 /* Contact Date Calendar Icon Dark Mode Contrast (Requirement 11) */
@@ -1652,11 +1731,14 @@ body.dark-mode .form-control[type="date"]::-webkit-calendar-picker-indicator:hov
 }
 
 .main-footer .footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.35rem;
   color: #ffffff;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.5rem;
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
@@ -1670,7 +1752,7 @@ body.dark-mode .form-control[type="date"]::-webkit-calendar-picker-indicator:hov
 .main-footer .footer-brand i.bi-compass,
 .main-footer .footer-brand .brand-icon {
   color: var(--primary);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   vertical-align: -0.05em;
   transition: color 0.2s ease;
 }
@@ -2080,6 +2162,42 @@ body.rtl {
   text-align: right;
 }
 
+body.rtl .form-label {
+  text-align: right;
+}
+
+body.rtl .form-control,
+body.rtl .form-select {
+  text-align: right;
+}
+
+body.rtl .form-control::placeholder {
+  text-align: right;
+}
+
+body.rtl .form-select {
+  background-position: left 0.75rem center;
+}
+
+body.rtl .sidebar-widget {
+  text-align: right;
+}
+
+body.rtl .sidebar-widget h4,
+body.rtl .sidebar-widget p {
+  text-align: right;
+}
+
+body.rtl .me-2 {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
+}
+
+body.rtl .ms-2 {
+  margin-left: 0 !important;
+  margin-right: 0.5rem !important;
+}
+
 body.rtl .timeline-item::before {
   left: auto;
   right: 50%;
@@ -2130,6 +2248,12 @@ body.rtl .dashboard-sidebar-toggle {
 }
 
 @media (max-width: 991.98px) {
+  /* Prevent negative horizontal gutter overflow on mobile */
+  .row.g-5 {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 2rem;
+  }
+
   .hero-section {
     min-height: 540px;
   }
@@ -2156,9 +2280,9 @@ body.rtl .dashboard-sidebar-toggle {
     top: 100%;
     left: 0;
     right: 0;
-    width: 100vw;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100%;
+    transform: none;
     max-height: calc(100vh - 74px);
     overflow-y: auto;
     padding: 1.25rem 1.5rem 2rem;
@@ -2168,26 +2292,166 @@ body.rtl .dashboard-sidebar-toggle {
     background-color: var(--surface);
     box-shadow: var(--shadow-lg);
     z-index: 1050;
+    box-sizing: border-box;
+  }
+
+  /* Mobile Navigation Drawer Shared Sizing */
+  .main-navbar .navbar-nav {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .main-navbar .navbar-nav .nav-item {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .main-navbar .navbar-nav .nav-link {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     padding: 0.65rem 0.25rem;
     font-size: 0.95rem;
   }
 
   .main-navbar .navbar-nav .dropdown-menu {
+    position: static !important;
+    float: none;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     border: 0;
     box-shadow: none;
-    padding-inline-start: 1rem;
     background-color: transparent;
+    padding: 0.25rem 0;
+    margin: 0;
+    transform: none !important;
   }
 
   .main-navbar .navbar-nav .dropdown-item {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     border-radius: var(--radius);
+  }
+
+  /* Explicit LTR Mobile Navigation Drawer Alignment */
+  html[dir="ltr"] .main-navbar .navbar-collapse,
+  body:not(.rtl) .main-navbar .navbar-collapse {
+    left: 0;
+    right: 0;
+    text-align: left;
+  }
+
+  html[dir="ltr"] .main-navbar .navbar-nav,
+  body:not(.rtl) .main-navbar .navbar-nav {
+    text-align: left;
+    align-items: stretch;
+  }
+
+  html[dir="ltr"] .main-navbar .navbar-nav .nav-item,
+  body:not(.rtl) .main-navbar .navbar-nav .nav-item {
+    text-align: left;
+  }
+
+  html[dir="ltr"] .main-navbar .navbar-nav .nav-link,
+  body:not(.rtl) .main-navbar .navbar-nav .nav-link {
+    text-align: left;
+  }
+
+  html[dir="ltr"] .main-navbar .navbar-nav .dropdown-menu,
+  body:not(.rtl) .main-navbar .navbar-nav .dropdown-menu {
+    text-align: left;
+  }
+
+  html[dir="ltr"] .main-navbar .navbar-nav .dropdown-item,
+  body:not(.rtl) .main-navbar .navbar-nav .dropdown-item {
+    text-align: left;
+    padding: 0.5rem 0.25rem 0.5rem 1.25rem;
+  }
+
+  html[dir="ltr"] .main-navbar .nav-actions,
+  body:not(.rtl) .main-navbar .nav-actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  /* Explicit RTL Mobile Navigation Drawer Alignment */
+  html[dir="rtl"] .main-navbar .navbar-collapse,
+  body.rtl .main-navbar .navbar-collapse {
+    left: 0;
+    right: 0;
+    text-align: right;
+  }
+
+  html[dir="rtl"] .main-navbar .navbar-nav,
+  body.rtl .main-navbar .navbar-nav {
+    text-align: right;
+    align-items: stretch;
+  }
+
+  html[dir="rtl"] .main-navbar .navbar-nav .nav-item,
+  body.rtl .main-navbar .navbar-nav .nav-item {
+    text-align: right;
+  }
+
+  html[dir="rtl"] .main-navbar .navbar-nav .nav-link,
+  body.rtl .main-navbar .navbar-nav .nav-link {
+    text-align: right;
+  }
+
+  html[dir="rtl"] .main-navbar .navbar-nav .dropdown-menu,
+  body.rtl .main-navbar .navbar-nav .dropdown-menu {
+    text-align: right;
+  }
+
+  html[dir="rtl"] .main-navbar .navbar-nav .dropdown-item,
+  body.rtl .main-navbar .navbar-nav .dropdown-item {
+    text-align: right;
+    padding: 0.5rem 1.25rem 0.5rem 0.25rem;
+  }
+
+  html[dir="rtl"] .main-navbar .nav-actions,
+  body.rtl .main-navbar .nav-actions {
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
   }
 
   .main-navbar .nav-actions {
     margin-top: 0.75rem;
+  }
+
+  /* Responsive Form Widget and Submit Button */
+  .sidebar-widget {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 1.35rem 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .sidebar-widget form {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  #site-visit .btn-primary-custom,
+  .sidebar-widget .btn-primary-custom {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    word-break: break-word;
+    padding-inline: 1rem;
+    min-height: 46px;
   }
 
   .dashboard-sidebar {
@@ -2346,6 +2610,10 @@ body.rtl .dashboard-sidebar-toggle {
 }
 
 @media (max-width: 575.98px) {
+  .sidebar-widget {
+    padding: 1.25rem 1rem;
+  }
+
   .process-timeline .feature-card {
     padding: 2.35rem 1rem 1.5rem;
   }

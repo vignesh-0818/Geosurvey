@@ -35,6 +35,10 @@ function initRTL() {
         document.body.classList.add('rtl');
         document.documentElement.setAttribute('dir', 'rtl');
         document.documentElement.setAttribute('lang', 'ar');
+    } else {
+        document.body.classList.remove('rtl');
+        document.documentElement.setAttribute('dir', 'ltr');
+        document.documentElement.setAttribute('lang', 'en');
     }
     updateRTLIcon();
 }
